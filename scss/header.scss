@@ -1,0 +1,88 @@
+@mixin posindex($position, $index) {
+  position: $position;
+  z-index: $index;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.header {
+  @include posindex(fixed, 5);
+  height: 57px;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 15%;
+  background-color: white;
+}
+
+.header__logo {
+  width: 60%;
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 1.5rem !important;
+  color: #5cb85c !important;
+  font-weight: 600;
+
+  .header__logo__text {
+    z-index: 5;
+    position: fixed;
+    cursor: pointer;
+  }
+}
+.menu__list {
+  display: flex;
+
+  .menu__list__title {
+    margin: 7px;
+    font-size: 1rem !important;
+    color: #bbb !important;
+    list-style-type: none;
+    font-weight: 300;
+  }
+}
+
+.menu__burger {
+  z-index: 5;
+  display: none;
+
+  .menu__burger__icon {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .body._lock {
+    overflow: hidden;
+  }
+
+  .header::before {
+    background-color: white;
+  }
+
+  .menu__list {
+    @include posindex(fixed, 1);
+    height: 100%;
+    display: none;
+    flex-direction: column;
+    padding-top: 57px;
+    overflow: auto;
+    background-color: rgb(0, 0, 0, 0.9);
+
+    .menu__list__title {
+      width: fit-content;
+      margin: auto;
+      font-size: 2rem !important;
+      color: white !important;
+    }
+
+    &._active {
+      display: flex;
+    }
+  }
+
+  .menu__burger {
+    position: fixed;
+    display: block;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,43 @@
+@import 'reset.scss';
+
+p {
+  color: #bbb !important;
+  font-weight: 100 !important;
+}
+
+body {
+  font-family: 'SourceSansPro', sans-serif;
+  width: 100%;
+}
+
+.god {
+  width: 100%;
+  padding-top: 57px;
+}
+
+@import 'header.scss';
+
+@import 'home.scss';
+
+@import 'formTabs.scss';
+
+@import 'arcticle.scss';
+
+.color__grey:hover {
+  color: black !important;
+}
+
+.dark__tag:hover {
+  background-color: #666666 !important;
+}
+
+.author__underline:hover {
+  text-decoration: underline !important;
+}
+
+@font-face {
+  font-family: 'SourceSansPro';
+  src: url('../fonts/SourceSansPro-Light.ttf') format('truetype');
+}
+
+//sass style.scss ../css/style.css
