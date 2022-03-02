@@ -1,7 +1,6 @@
 'use strict';
 import { createStateTab, createFormTab } from './modules/tabs.js';
-
-
+import { formTabData, stateTabData } from './modules/data.js';
 import { userStorage } from './modules/userStorage.js';
 
 //selectors
